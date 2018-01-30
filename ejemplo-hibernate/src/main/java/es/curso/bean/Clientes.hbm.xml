@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06-nov-2017 19:58:31 by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="es.curso.bean.Clientes" table="clientes" catalog="empresa3" optimistic-lock="version">
+        <id name="idcliente" type="string">
+            <column name="idcliente" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="50" />
+        </property>
+        <property name="pais" type="string">
+            <column name="pais" length="30" />
+        </property>
+        <property name="carnet" type="java.lang.Boolean">
+            <column name="carnet" />
+        </property>
+        <property name="musica" type="java.lang.Boolean">
+            <column name="musica" />
+        </property>
+        <property name="deporte" type="java.lang.Boolean">
+            <column name="deporte" />
+        </property>
+        <property name="cine" type="java.lang.Boolean">
+            <column name="cine" />
+        </property>
+        <property name="montanya" type="java.lang.Boolean">
+            <column name="montanya" />
+        </property>
+        <set name="pedidoses" table="pedidos" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idcliente" length="10" not-null="true" />
+            </key>
+            <one-to-many class="es.curso.bean.Pedidos" />
+        </set>
+    </class>
+</hibernate-mapping>

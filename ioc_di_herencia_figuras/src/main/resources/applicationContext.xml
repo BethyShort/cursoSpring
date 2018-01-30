@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="figura" class="com.ejemplo.figuras.Figura" abstract="true">
+		<property name="etiqueta" value="mi_etiqueta"></property>
+	</bean>
+	<bean id="cubo" class="com.ejemplo.figuras.Cubo" parent="figura">
+		<property name="lado" value="4"></property>
+		<!-- <property name="etiqueta" value="cubo1"></property>-->
+	</bean>
+	<bean id="cilindro" class="com.ejemplo.figuras.Cilindro"
+		parent="figura">
+		<property name="altura" value="1.4"></property>
+		<property name="etiqueta" value="cilindro1"></property>
+		<property name="radio" value="5.5"></property>
+	</bean>
+</beans>
