@@ -11,12 +11,17 @@ public class Prueba {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 		ApplicationContext contexto = new ClassPathXmlApplicationContext("contexto.xml");
 		Configuracion config;
 		
 		config = (Configuracion) contexto.getBean("config");		
 		System.out.println("Con la clase: PropertyPlaceholderConfigurer");
-		System.out.println(config);		
+		System.out.println(config);
+		
+		config = (Configuracion) contexto.getBean("config2");		
+		System.out.println("Con la clase: PropertyPlaceholderConfigurer 2");
+		System.out.println(config);
 		((ClassPathXmlApplicationContext) contexto).close();
 		
 		contexto = new ClassPathXmlApplicationContext("contexto2.xml");		

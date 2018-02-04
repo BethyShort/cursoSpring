@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06-nov-2017 19:58:31 by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="es.curso.bean.Detallespedido" table="detallespedido" catalog="empresa3" optimistic-lock="version">
+        <composite-id name="id" class="es.curso.bean.DetallespedidoId">
+            <key-property name="idpedido" type="int">
+                <column name="idpedido" />
+            </key-property>
+            <key-property name="idproducto" type="int">
+                <column name="idproducto" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="pedidos" class="es.curso.bean.Pedidos" update="false" insert="false" fetch="select">
+            <column name="idpedido" not-null="true" />
+        </many-to-one>
+        <many-to-one name="productos" class="es.curso.bean.Productos" update="false" insert="false" fetch="select">
+            <column name="idproducto" not-null="true" />
+        </many-to-one>
+        <property name="precio" type="java.lang.Float">
+            <column name="precio" precision="12" scale="0" />
+        </property>
+        <property name="unidades" type="java.lang.Integer">
+            <column name="unidades" />
+        </property>
+        <property name="descuento" type="java.lang.Float">
+            <column name="descuento" precision="12" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

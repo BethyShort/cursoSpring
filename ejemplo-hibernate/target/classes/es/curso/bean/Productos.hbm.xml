@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06-nov-2017 19:58:31 by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="es.curso.bean.Productos" table="productos" catalog="empresa3" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="categorias" class="es.curso.bean.Categorias" fetch="select">
+            <column name="idcategoria" not-null="true" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" length="30" />
+        </property>
+        <property name="precio" type="java.lang.Float">
+            <column name="precio" precision="12" scale="0" />
+        </property>
+        <property name="existencias" type="java.lang.Integer">
+            <column name="existencias" />
+        </property>
+        <set name="detallespedidos" table="detallespedido" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idproducto" not-null="true" />
+            </key>
+            <one-to-many class="es.curso.bean.Detallespedido" />
+        </set>
+    </class>
+</hibernate-mapping>
