@@ -8,12 +8,10 @@ public class Cilindro extends Figura {
 	
 	@Override
 	public void draw() {
-		// TODO Auto-generated method stub
 		System.out.println(getEtiqueta() + " con volumen " + volumen());
 	}
 
 	public double volumen() {
-		// TODO Auto-generated method stub
 		double valor = 2 * PI * radio * radio * altura; 
 		return valor;
 	}

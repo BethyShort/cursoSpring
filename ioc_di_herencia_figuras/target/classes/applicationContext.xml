@@ -10,13 +10,13 @@
 	
 	<bean id="cubo" class="com.ejemplo.figuras.Cubo" parent="figura">
 		<property name="lado" value="4"></property>
-		<property name="etiqueta" value="cubo"></property>
+		<property name="etiqueta" value="cubo1"></property>
 	</bean>
 	
 	<bean id="cilindro" class="com.ejemplo.figuras.Cilindro"
 		parent="figura">
 		<property name="altura" value="1.4"></property>
-		<property name="etiqueta" value="cilindro"></property>
+		<property name="etiqueta" value="cilindro1"></property>
 		<property name="radio" value="5.5"></property>
 	</bean>
 </beans>

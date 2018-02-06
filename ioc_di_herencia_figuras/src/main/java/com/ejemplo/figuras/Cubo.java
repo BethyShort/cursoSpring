@@ -14,7 +14,6 @@ public  class Cubo extends Figura {
 
 	@Override
 	public void draw() {
-		// TODO Auto-generated method stub
 		System.out.println(getEtiqueta() + " con area " + volumen());
 	}
 

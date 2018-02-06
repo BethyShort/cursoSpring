@@ -2,8 +2,8 @@ package com.ejemplo.principal;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import com.ejemplo.figuras.Cilindro;
-import com.ejemplo.figuras.Cubo;
+
+import com.ejemplo.figuras.Figura;
 
 
 
@@ -13,16 +13,16 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		ApplicationContext factory = new ClassPathXmlApplicationContext("applicationContext.xml");		
-		Cubo cubo = (Cubo) factory.getBean("cubo");
-		//cubo.setEtiqueta("Cubo");
-		cubo.draw();
+		Figura figura =  factory.getBean("cubo",Figura.class);
+		System.out.println("la figura que vamos a dibujar es: "+figura.getEtiqueta());
+		figura.draw();
 		
-		Cilindro cilindro = (Cilindro) factory.getBean("cilindro");
-		//cilindro.setEtiqueta("Cilindro");
-		cilindro.draw();
+		figura =  factory.getBean("cilindro",Figura.class);
+		System.out.println("la figura que vamos a dibujar es: "+figura.getEtiqueta());
+		figura.getEtiqueta();
+		figura.draw();
 		
 		((ClassPathXmlApplicationContext) factory).close();
 	}
