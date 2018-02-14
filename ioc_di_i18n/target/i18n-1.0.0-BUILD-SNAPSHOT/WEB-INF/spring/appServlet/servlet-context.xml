@@ -22,7 +22,7 @@
 
 	<beans:bean id="messageSource"
 		class="org.springframework.context.support.ResourceBundleMessageSource">
-		<beans:property name="basename" value="messages" />
+		<beans:property name="basenames" value="textos,messages" />
 	</beans:bean>
 
 

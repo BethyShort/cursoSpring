@@ -6,17 +6,14 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
 
-	<!-- UTILIZANDO ESTA POSIBILIDAD NO HACE FALTA DECLARAR EL BEAN: placeholderConfig -->
-	<!-- <context:property-placeholder location="classpath:config.properties"/>-->
-	
 	<bean id="placeholderConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
        <property name="location" value="config.properties"></property>
  	</bean>
  	
  	<bean id="placeholderConfig2" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
        <property name="location" value="config2.properties"></property>
-       	<property name="placeholderPrefix" value="$config2{" />
-		<property name="placeholderSuffix" value="}" />
+       <property name="placeholderPrefix" value="$config2{" />
+	   <property name="placeholderSuffix" value="}" />
  	</bean>
 		
 	<bean id="config" class="com.ejemplo.spring.Configuracion">
