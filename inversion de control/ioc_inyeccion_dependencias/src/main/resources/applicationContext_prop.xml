@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<context:property-placeholder location="classpath:coche.properties"/>
+
+	<bean id="coche" class="es.curso.dependencias.Coche" 
+	init-method="inicializar" destroy-method="destruir">
+		<property name="motor" ref="motor"></property>
+		<property name="radio" ref="radio"></property>
+	</bean>
+	
+	<bean id="motor" class="es.curso.dependencias.Motor">
+		<property name="marca" value="${motor.marca}"></property>
+		<property name="potencia" value="${motor.potencia}"></property>
+	</bean>
+	
+	<bean id="radio" class="es.curso.dependencias.Radio">
+		<property name="marca" value="${radio.marca}"></property>
+		<property name="modelo" value="${radio.modelo}"></property>
+	</bean>
+	
+</beans>

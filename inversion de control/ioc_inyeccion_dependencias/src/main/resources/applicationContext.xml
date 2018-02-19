@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean id="coche" class="es.curso.dependencias.Coche" 
+	init-method="inicializar" destroy-method="destruir">
+		<property name="motor" ref="motor"></property>
+		<property name="radio" ref="radio"></property>
+	</bean>
+	
+	<bean id="motor" class="es.curso.dependencias.Motor">
+		<property name="marca" value="ford"></property>
+		<property name="potencia" value="2000"></property>
+	</bean>
+	
+	<bean id="radio" class="es.curso.dependencias.Radio">
+		<property name="marca" value="Sony"></property>
+		<property name="modelo" value="THT"></property>
+	</bean>
+	
+</beans>

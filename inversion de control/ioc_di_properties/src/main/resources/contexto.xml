@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+
+	<!-- UTILIZANDO ESTA POSIBILIDAD NO HACE FALTA DECLARAR EL BEAN: placeholderConfig -->
+	<!-- <context:property-placeholder location="classpath:config.properties"/>-->
+	
+	<bean id="placeholderConfig"
+       class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+       <property name="location" value="config.properties"></property>
+ 	</bean>
+		
+	<bean id="config" class="com.ejemplo.spring.Configuracion">
+		<property name="url" value="${url}"></property>
+		<property name="bd" value="${bd}"></property>
+		<property name="user" value="${user}"></property>
+		<property name="pwd" value="${pwd}"></property>
+	</bean>
+</beans>

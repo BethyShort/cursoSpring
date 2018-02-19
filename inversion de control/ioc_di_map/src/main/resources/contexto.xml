@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="dir" class="com.ejemplo.spring.Direccion">
+		<property name="calle" value="Gran Via"></property>
+		<property name="numero" value="5"></property>
+	</bean>
+	
+	<bean id="hermano1" name="p1" class="com.ejemplo.spring.Persona">
+		<constructor-arg value="Juan"></constructor-arg>
+		<constructor-arg value="Sanchez"></constructor-arg>
+		<constructor-arg value="33"></constructor-arg>		
+		<constructor-arg ref="dir"></constructor-arg>
+	</bean>
+	
+	<bean id="hermano2" name="p2" class="com.ejemplo.spring.Persona">
+		<constructor-arg value="Elena"></constructor-arg>
+		<constructor-arg value="Sanchez"></constructor-arg>
+		<constructor-arg value="25"></constructor-arg>
+		<constructor-arg ref="dir"></constructor-arg>
+	</bean>
+	
+	<bean id="familia" name="familia" class="com.ejemplo.spring.Familia">
+		<property name="mapa">
+			<map>
+				<entry key="1" value-ref="hermano1"></entry>
+				<entry key="2" value-ref="hermano2"></entry>			
+			</map>
+		</property>
+	</bean>
+</beans>
