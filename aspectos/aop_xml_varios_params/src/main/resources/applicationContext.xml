@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
-	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<bean id="mago" class="com.curso.aop.Mago">
-	</bean>
+    <bean id="mago" class="com.curso.aop.Mago">
+    </bean>
 
-	<bean id="voluntario" class="com.curso.aop.Voluntario">
-	</bean>
+    <bean id="voluntario" class="com.curso.aop.Voluntario">
+    </bean>
 
-	<aop:config>
-		<aop:aspect ref="mago">
-			<aop:pointcut
-				expression="execution (* com.curso.aop.Voluntario.pensar(..)) and args(pensamientos,observaciones)"
-				id="pc" />
-			<aop:before method="interceptar" arg-names="pensamientos, observaciones"
-				pointcut-ref="pc" />
-		</aop:aspect>
-	</aop:config>
+    <aop:config>
+        <aop:aspect ref="mago">
+            <aop:pointcut
+                expression="execution (* com.curso.aop.Voluntario.pensar(..)) and args(pensamientos,observaciones)"
+                id="pc" />
+            <aop:before method="interceptar" arg-names="pensamientos, observaciones"
+                pointcut-ref="pc" />
+        </aop:aspect>
+    </aop:config>
 
 </beans>

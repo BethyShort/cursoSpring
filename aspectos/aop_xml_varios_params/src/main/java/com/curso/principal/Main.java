@@ -8,22 +8,21 @@ import com.curso.aop.IVoluntario;
 
 public class Main {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		ApplicationContext contexto = new ClassPathXmlApplicationContext("applicationContext.xml");
-		IVoluntario vol;
-		IMago mago;
-		
-		vol = (IVoluntario) contexto.getBean("voluntario");
-		mago = (IMago) contexto.getBean("mago");
-		
-		vol.pensar("mis pensamientos", "mis observaciones");
-		
-		System.out.println("El mago intercepta: " + mago.getObservaciones() + " " + mago.getPensamientos());
-		((ClassPathXmlApplicationContext) contexto).close();
-	}
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        ApplicationContext contexto = new ClassPathXmlApplicationContext("applicationContext.xml");
+        IVoluntario vol;
+        IMago mago;
+
+        vol = (IVoluntario) contexto.getBean("voluntario");
+        mago = (IMago) contexto.getBean("mago");
+
+        vol.pensar("mis pensamientos", "mis observaciones");
+
+        System.out.println("El mago intercepta: " + mago.getObservaciones() + " " + mago.getPensamientos());
+        ((ClassPathXmlApplicationContext) contexto).close();
+    }
 
 }

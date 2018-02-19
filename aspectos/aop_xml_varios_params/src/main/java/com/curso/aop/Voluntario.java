@@ -1,27 +1,29 @@
 package com.curso.aop;
 
+/**
+ * Clase sobre la que se establece el pointcut
+ * @author sorel
+ *
+ */
 public class Voluntario implements IVoluntario {
-	
-	private String pensamientos;
-	private String observaciones;
 
-	@Override
-	public void pensar(String pensamientos, String observaciones) {
-		// TODO Auto-generated method stub
-		this.pensamientos = pensamientos;
-		this.observaciones = observaciones;
-	}
+    private String pensamientos;
+    private String observaciones;
 
-	@Override
-	public String getPensamientos() {
-		// TODO Auto-generated method stub
-		return pensamientos;
-	}
+    @Override
+    public void pensar(String pensamientos, String observaciones) {
+        this.pensamientos = pensamientos;
+        this.observaciones = observaciones;
+    }
 
-	@Override
-	public String getObservaciones() {
-		// TODO Auto-generated method stub
-		return observaciones;
-	}
+    @Override
+    public String getPensamientos() {
+        return pensamientos;
+    }
+
+    @Override
+    public String getObservaciones() {
+        return observaciones;
+    }
 
 }
