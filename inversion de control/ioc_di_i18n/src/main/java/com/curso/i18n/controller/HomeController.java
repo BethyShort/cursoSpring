@@ -12,9 +12,6 @@ import org.springframework.web.servlet.support.RequestContext;
 
 import com.curso.i18n.modelo.Contacto;
 
-/**
- * Handles requests for the application home page.
- */
 @Controller
 public class HomeController {
 	
@@ -38,7 +35,7 @@ public class HomeController {
 	
 	@RequestMapping(value="/add", method=RequestMethod.POST)
 	public String grabar(){
-		return "index"; // Aquí iríamos a otra vista para registrar el contacto.
+		return "index"; // Aquï¿½ irï¿½amos a otra vista para registrar el contacto.
 	}
 	
 	@ModelAttribute("contacto")
