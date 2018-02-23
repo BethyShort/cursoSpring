@@ -9,6 +9,6 @@ import es.curso.modelo.beans.Trabajador;
  */
 public interface ITrabajadorDAO2 {
 
-    public int insert(Trabajador t);
+    public int insert(Trabajador trabajador);
 
 }

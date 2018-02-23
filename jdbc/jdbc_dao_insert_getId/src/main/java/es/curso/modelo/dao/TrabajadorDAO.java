@@ -16,7 +16,7 @@ import es.curso.modelo.beans.Trabajador;
  */
 public class TrabajadorDAO extends JdbcDaoSupport implements ITrabajadorDAO, RowMapper<Trabajador> {
 
-    public Trabajador mapRow(ResultSet resultset, int n) throws SQLException {
+    public Trabajador mapRow(ResultSet resultset, int numeroRegistroActual) throws SQLException {
         Trabajador trabajador = new Trabajador();
 
         trabajador.setId(resultset.getString("id"));
@@ -28,14 +28,14 @@ public class TrabajadorDAO extends JdbcDaoSupport implements ITrabajadorDAO, Row
 
     public void insert(Trabajador trabajador) {
         String sentenciaSQL = "insert into trabajadores(id,nombre,departamento) values(?,?,?)";
-        Object[] param = new Object[] { trabajador.getId(), trabajador.getNombre(), trabajador.getDepartamento() };
-        getJdbcTemplate().update(sentenciaSQL, param);
+        Object[] parametros = new Object[] { trabajador.getId(), trabajador.getNombre(), trabajador.getDepartamento() };
+        getJdbcTemplate().update(sentenciaSQL, parametros);
     }
 
     public void delete(int numeroTrabajador) {
-        String sql = "delete from trabajadores where numero_trabajador = ?";
-        Object[] param = new Object[] { numeroTrabajador };
-        getJdbcTemplate().update(sql, param);
+        String sentenciaSql = "delete from trabajadores where numero_trabajador = ?";
+        Object[] parametros = new Object[] { numeroTrabajador };
+        getJdbcTemplate().update(sentenciaSql, parametros);
     }
 
     public void update(Trabajador trabajador) {

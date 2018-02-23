@@ -11,9 +11,9 @@ public class Trabajador {
     private String departamento;
     private int    numeroTrabajador;
 
-    public Trabajador(String id, String nombre, String departamento, int numeroTrabajador) {
+    public Trabajador(String idTrabajador, String nombre, String departamento, int numeroTrabajador) {
         super();
-        this.id = id;
+        this.id = idTrabajador;
         this.nombre = nombre;
         this.departamento = departamento;
         this.numeroTrabajador = numeroTrabajador;

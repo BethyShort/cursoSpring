@@ -20,7 +20,7 @@ public class TrabajadorDAO2 extends NamedParameterJdbcTemplate implements ITraba
     @Override
     public int insert(Trabajador trabajador) {
         String sentenciaSql;
-        int registrosActualizados = 0;
+        int numeroRegistrosActualizados = 0;
 
         try {
             sentenciaSql = "insert into trabajadores(id,nombre,departamento) values(:id,:nombre,:departamento)";
@@ -29,10 +29,10 @@ public class TrabajadorDAO2 extends NamedParameterJdbcTemplate implements ITraba
             parametros.put("id", trabajador.getId());
             parametros.put("nombre", trabajador.getNombre());
             parametros.put("departamento", trabajador.getDepartamento());
-            registrosActualizados = update(sentenciaSql, parametros);
+            numeroRegistrosActualizados = update(sentenciaSql, parametros);
         } catch (Exception e) {
         }
-        return registrosActualizados;
+        return numeroRegistrosActualizados;
     }
 
 }

@@ -6,6 +6,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import es.curso.modelo.beans.Trabajador;
 import es.curso.modelo.dao3.ITrabajadorDAO3;
 
+/**
+ * 
+ * @author sorel
+ *
+ */
 public class MainDao3 {
 
     public static void main(String[] args) {

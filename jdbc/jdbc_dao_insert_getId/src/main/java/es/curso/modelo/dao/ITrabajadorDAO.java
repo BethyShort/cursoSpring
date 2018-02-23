@@ -11,15 +11,15 @@ import es.curso.modelo.beans.Trabajador;
  */
 public interface ITrabajadorDAO {
 
-    public void insert(Trabajador t);
+    public void insert(Trabajador trabajador);
 
-    public void delete(int id);
+    public void delete(int idTrabajador);
 
-    public void update(Trabajador t);
+    public void update(Trabajador trabajador);
 
-    public Trabajador get(int id);
+    public Trabajador get(int idTrabajador);
 
     public List<Trabajador> getAll();
 
-    public List<Trabajador> getAll(Trabajador t);
+    public List<Trabajador> getAll(Trabajador trabajador);
 }
