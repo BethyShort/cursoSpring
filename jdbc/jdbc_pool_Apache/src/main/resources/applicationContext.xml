@@ -13,11 +13,11 @@
     </bean>
 
     <bean class="org.springframework.jdbc.core.JdbcTemplate" id="jdbcTemplate">
-        <constructor-arg ref="ds" />
+        <constructor-arg ref="ds"/>
     </bean>
 
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="location" value="conexion.properties" />
+        <property name="location" value="conexion.properties"/>
     </bean>
 
 </beans>

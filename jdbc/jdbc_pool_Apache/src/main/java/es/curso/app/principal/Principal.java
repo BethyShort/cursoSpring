@@ -12,6 +12,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 public class Principal {
 
     public static void main(String[] args) {
+        
         ApplicationContext contexto=new ClassPathXmlApplicationContext("applicationContext.xml");
         JdbcTemplate jdbcTemplate = (JdbcTemplate) contexto.getBean("jdbcTemplate");
         

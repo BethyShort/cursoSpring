@@ -1,68 +1,65 @@
 package es.curso.modelo.beans;
 
+/**
+ * 
+ * @author sorel
+ *
+ */
 public class Trabajador {
-	private String id;
-	private String nombre;
-	private String departamento;	
-	private int numeroTrabajador;
-		
+    private String id;
+    private String nombre;
+    private String departamento;
+    private int    numeroTrabajador;
 
-	public Trabajador(String id, String nombre, String departamento,
-			int numeroTrabajador) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-		this.departamento = departamento;
-		this.numeroTrabajador = numeroTrabajador;
-	}
+    public Trabajador(String id, String nombre, String departamento, int numeroTrabajador) {
+        super();
+        this.id = id;
+        this.nombre = nombre;
+        this.departamento = departamento;
+        this.numeroTrabajador = numeroTrabajador;
+    }
 
+    public Trabajador() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
+    public int getNumeroTrabajador() {
+        return numeroTrabajador;
+    }
 
-	public Trabajador() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
-	
+    public void setNumeroTrabajador(int numeroTrabajador) {
+        this.numeroTrabajador = numeroTrabajador;
+    }
 
-	public int getNumeroTrabajador() {
-		return numeroTrabajador;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public void setNumeroTrabajador(int numeroTrabajador) {
-		this.numeroTrabajador = numeroTrabajador;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public String getId() {
-		return id;
-	}
+    public String getNombre() {
+        return nombre;
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public String getNombre() {
-		return nombre;
-	}
+    public String getDepartamento() {
+        return departamento;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
+    }
 
-	public String getDepartamento() {
-		return departamento;
-	}
+    @Override
+    public String toString() {
+        return "Trabajador [id=" + id + ", nombre=" + nombre + ", departamento=" + departamento + ", numeroTrabajador="
+                + numeroTrabajador + "]";
+    }
 
-	public void setDepartamento(String departamento) {
-		this.departamento = departamento;
-	}
-
-	@Override
-	public String toString() {
-		return "Trabajador [id=" + id + ", nombre=" + nombre
-				+ ", departamento=" + departamento + ", numeroTrabajador="
-				+ numeroTrabajador + "]";
-	}
-	
-	
 }
