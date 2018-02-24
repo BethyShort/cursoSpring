@@ -8,17 +8,23 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.object.SqlQuery;
 
-public class SelectCliente extends SqlQuery<Cliente>{
-	
-	public SelectCliente() {
-		super();
-	}
-	public SelectCliente(DataSource ds, String sql) {
-		super(ds, sql);		
-	}
-	@Override
-	protected RowMapper<Cliente> newRowMapper(Object[] parameters, Map context) {
-		// TODO Auto-generated method stub
-		return BeanPropertyRowMapper.newInstance(Cliente.class);
-	}
+/**
+ * 
+ * @author sorel
+ *
+ */
+public class SelectCliente extends SqlQuery<Cliente> {
+
+    public SelectCliente() {
+        super();
+    }
+
+    public SelectCliente(DataSource dataSource, String sentenciaSql) {
+        super(dataSource, sentenciaSql);
+    }
+
+    @Override
+    protected RowMapper<Cliente> newRowMapper(Object[] parameters, Map context) {
+        return BeanPropertyRowMapper.newInstance(Cliente.class);
+    }
 }
