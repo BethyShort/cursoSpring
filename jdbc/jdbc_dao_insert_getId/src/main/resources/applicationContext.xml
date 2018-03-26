@@ -12,7 +12,7 @@
 	</bean>
 	
 	<bean id="dao" class="es.curso.modelo.dao.TrabajadorDAO">
-		<property name="dataSource" ref="ds" ></property>
+		<property name="dataSource" ref="ds"></property>
 	</bean>
 	
 	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
